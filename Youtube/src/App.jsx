@@ -6,17 +6,23 @@ import Detail from './pages/Detail'
 import Home from './pages/Home'
 import Search from './pages/Search'
 import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
+import PageContainer from './containers/PageContainer'
+
 
 function App() {
 
   return (
     <BrowserRouter>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="videos/:id" element={<Detail />} />
-        <Route path="search/:keyword" element={<Search />} />
-      </Routes>
+      <PageContainer>
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="videos/:id" element={<Detail />} />
+          <Route path="search/:keyword" element={<Search />} />
+        </Routes>
+      </PageContainer>
     </BrowserRouter >
   )
 }

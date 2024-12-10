@@ -1,10 +1,10 @@
 import youtube from './youtube.png';
-import deneme from './youtube1.png';
+import youtube1 from './youtube1.png';
 
 
 export default {
 
     youtube: youtube,
-    deneme: deneme,
+    youtube1: youtube1,
 
 }
