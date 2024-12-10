@@ -5,11 +5,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Detail from './pages/Detail'
 import Home from './pages/Home'
 import Search from './pages/Search'
+import Navbar from './components/Navbar'
 
 function App() {
 
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="videos/:id" element={<Detail />} />
