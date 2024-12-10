@@ -7,7 +7,7 @@ const Navbar = () => {
         <div className="w-full flex items-center justify-between h-20 px-3">
             <div className="w-3/12 flex items-center space-x-4">
                 <icons.menu className="icon-style" />
-                <img className="w-32" src={images.youtube} alt="" />
+                <img className="w-32" src={images.youtube1} alt="" />
             </div>
             <div className="w-6/12 flex items-center space-x-4">
                 <input className="outline-none border p-2 h-10 flex-1" type="text" placeholder="Ara" />
@@ -19,8 +19,8 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="w-3/12 flex items-center justify-end space-x-5">
-                <icons.video className="icon-style" />
-                <icons.notification className="icon-style" />
+                <icons.video className="icon-style text-2xl" />
+                <icons.notification className="icon-style text-2xl" />
                 <div className="w-10 h-10 bg-gray-200 rounded-full">
                 </div>
             </div>
