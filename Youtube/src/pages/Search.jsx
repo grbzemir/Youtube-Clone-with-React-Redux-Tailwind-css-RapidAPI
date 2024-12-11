@@ -21,9 +21,12 @@ const Search = () => {
 
     return (
         <div>
-            <SearchCard />
-            <SearchCard />
-            <SearchCard />
+            {
+                getSearch?.items?.length > 0
+                    ? getSearch.items.map((search, i) => <SearchCard key={i} search={search} />)
+                    : <p>No Search available.</p>
+
+            }
         </div>
     )
 }

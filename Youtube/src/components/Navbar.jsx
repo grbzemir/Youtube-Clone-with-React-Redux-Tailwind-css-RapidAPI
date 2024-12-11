@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="w-full flex items-center justify-between h-20 px-3">
             <div className="w-3/12 flex items-center space-x-4">
                 <icons.menu className="icon-style" />
-                <img className="w-32" src={images.youtube1} alt="" />
+                <img onClick={() => window.location = "/"} className="w-32 cursor-pointer" src={images.youtube1} alt="" />
             </div>
             <div className="w-6/12 flex items-center space-x-4">
                 <input onKeyPress={onKeyFunc} value={searchKeyword} onChange={e => setSearchKeyword(e.target.value)} className="outline-none border p-2 h-10 flex-1" type="text" placeholder="Ara" />
