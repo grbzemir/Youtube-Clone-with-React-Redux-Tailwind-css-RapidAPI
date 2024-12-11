@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import HomeCard from '../components/HomeCard'
 import Filter from '../components/Filter'
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import homeAction from '../redux/actions/HomeData';
 
 const Home = () => {
@@ -10,26 +9,24 @@ const Home = () => {
     const { getVideos } = useSelector(state => state.getVideos);
 
     useEffect(() => {
-        dispatch(homeAction('new'))
-    }, [dispatch])
+        dispatch(homeAction('new'));
+    }, [dispatch]);
+
     console.log("getVideos", getVideos);
+
     return (
         <div className="m-3">
             <Filter />
             <div className="flex flex-wrap m-2">
-                <HomeCard />
-                <HomeCard />
-                <HomeCard />
-                <HomeCard />
-                <HomeCard />
-                <HomeCard />
-                <HomeCard />
-                <HomeCard />
-                <HomeCard />
-                <HomeCard />
+                {
+                    getVideos?.items?.length > 0
+                        ? getVideos.items.map((video, i) => <HomeCard key={i} video={video} />)
+                        : <p>No videos available.</p>
+
+                }
             </div>
         </div>
-    )
+    );
 }
 
-export default Home
+export default Home;

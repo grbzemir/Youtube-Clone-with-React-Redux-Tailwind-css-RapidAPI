@@ -2,6 +2,7 @@ import { applyMiddleware, combineReducers, createStore } from "redux"
 import { composeWithDevTools } from "redux-devtools-extension"
 import { thunk } from "redux-thunk"
 import homeReducer from "./reducers/HomeData"
+import detailReducer from "./reducers/DetailData"
 
 //Başlangıç durumunu tutan bir obje oluşturuyoruz.
 let initialState = {
@@ -10,7 +11,8 @@ let initialState = {
 
 
 let reducers = combineReducers({
-    getVideos: homeReducer
+    getVideos: homeReducer,
+    getVideo: detailReducer
 })
 
 

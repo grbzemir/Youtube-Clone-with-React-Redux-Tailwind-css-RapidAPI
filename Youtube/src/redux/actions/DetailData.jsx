@@ -1,18 +1,15 @@
 import axios from 'axios';
 
-const homeAction = (data) => async (dispatch) => {
+const detailAction = (id) => async (dispatch) => {
     try {
         // Fetching data from API
 
         const options = {
             method: 'GET',
-            url: 'https://youtube-v31.p.rapidapi.com/search',
+            url: 'https://youtube-v31.p.rapidapi.com/videos',
             params: {
-                relatedToVideoId: '7ghhRHRP6t4',
-                part: 'snippet',
-                // type: 'video'
-                q: data,
-                maxResults: '50'
+                part: 'contentDetails,snippet,statistics',
+                id: id
             },
             headers: {
                 'x-rapidapi-key': '1f60cface1mshe4ec8983d98697dp1b3cacjsn731785c48b9c',
@@ -23,7 +20,7 @@ const homeAction = (data) => async (dispatch) => {
         try {
             const response = await axios.request(options);
             dispatch({
-                type: 'GET_VIDEOS',
+                type: 'GET_VIDEO',
                 payload: response.data
             });
         } catch (error) {
@@ -35,4 +32,4 @@ const homeAction = (data) => async (dispatch) => {
     }
 }
 
-export default homeAction;
+export default detailAction;
